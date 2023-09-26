@@ -78,7 +78,7 @@ Esse endpoint deverá listar todas as contas bancárias existentes.
 
 #### `POST` `/contas`
 
-Esse endpoint deverá criar uma conta bancária, onde será gerado um número único para identificação da conta (número da conta).
+Esse endpoint criar uma conta bancária, onde será gerado um número único para identificação da conta (número da conta).
 
 -   **Requisição** - O corpo (body) deverá possuir um objeto com as seguintes propriedades (respeitando estes nomes):
     -   nome
@@ -87,10 +87,6 @@ Esse endpoint deverá criar uma conta bancária, onde será gerado um número ú
     -   telefone
     -   email
     -   senha
-
--   **Resposta**
-    Em caso de **sucesso**, não deveremos enviar conteúdo no corpo (body) da resposta.  
-    Em caso de **falha na validação**, a resposta deverá possuir ***status code*** apropriado, e em seu corpo (body) deverá possuir um objeto com uma propriedade **mensagem** que deverá possuir como valor um texto explicando o motivo da falha.
 
 #### Exemplo de Requisição
 
@@ -123,7 +119,7 @@ Esse endpoint deverá criar uma conta bancária, onde será gerado um número ú
 
 #### `PUT` `/contas/:numeroConta/usuario`
 
-Esse endpoint deverá atualizar apenas os dados do usuário de uma conta bancária.
+Esse endpoint atualizar apenas os dados do usuário de uma conta bancária.
 
 -   **Requisição** - O corpo (body) deverá possuir um objeto com todas as seguintes propriedades (respeitando estes nomes):
     -   nome
@@ -132,11 +128,6 @@ Esse endpoint deverá atualizar apenas os dados do usuário de uma conta bancár
     -   telefone
     -   email
     -   senha
-
--   **Resposta**
-
-    Em caso de **sucesso**, não deveremos enviar conteúdo no corpo (body) da resposta.  
-    Em caso de **falha na validação**, a resposta deverá possuir ***status code*** apropriado, e em seu corpo (body) deverá possuir um objeto com uma propriedade **mensagem** que deverá possuir como valor um texto explicando o motivo da falha.
 
 #### Exemplo de Requisição
 ```javascript
@@ -169,15 +160,11 @@ Esse endpoint deverá atualizar apenas os dados do usuário de uma conta bancár
 
 #### `DELETE` `/contas/:numeroConta`
 
-Esse endpoint deve excluir uma conta bancária existente.
+Esse endpoint excluir uma conta bancária existente.
 
 -   **Requisição**
     -   Numero da conta bancária (passado como parâmetro na rota)
       
--   **Resposta**
-    Em caso de **sucesso**, não deveremos enviar conteúdo no corpo (body) da resposta.  
-    Em caso de **falha na validação**, a resposta deverá possuir ***status code*** apropriado, e em seu corpo (body) deverá possuir um objeto com uma propriedade **mensagem** que deverá possuir como valor um texto explicando o motivo da falha.
-
 #### Exemplo de Resposta
 
 ```javascript
@@ -195,15 +182,11 @@ Esse endpoint deve excluir uma conta bancária existente.
 
 #### `POST` `/transacoes/depositar`
 
-Esse endpoint deverá somar o valor do depósito ao saldo de uma conta válida e registrar essa transação.
+Esse endpoint somar o valor do depósito ao saldo de uma conta válida e registrar essa transação.
 
 -   **Requisição** - O corpo (body) deverá possuir um objeto com as seguintes propriedades (respeitando estes nomes):
     -   numero_conta
     -   valor
-
--   **Resposta**
-    Em caso de **sucesso**, não deveremos enviar conteúdo no corpo (body) da resposta.  
-    Em caso de **falha na validação**, a resposta deverá possuir ***status code*** apropriado, e em seu corpo (body) deverá possuir um objeto com uma propriedade **mensagem** que deverá possuir como valor um texto explicando o motivo da falha.
 
 #### Exemplo de Requisição
 ```javascript
@@ -241,18 +224,13 @@ Esse endpoint deverá somar o valor do depósito ao saldo de uma conta válida e
 
 #### `POST` `/transacoes/sacar`
 
-Esse endpoint deverá realizar o saque de um valor em uma determinada conta bancária e registrar essa transação.
+Esse endpoint realizar o saque de um valor em uma determinada conta bancária e registrar essa transação.
 
 -   **Requisição** - O corpo (body) deverá possuir um objeto com as seguintes propriedades (respeitando estes nomes):
 
     -   numero_conta
     -   valor
     -   senha
-
--   **Resposta**
-
-    Em caso de **sucesso**, não deveremos enviar conteúdo no corpo (body) da resposta.  
-    Em caso de **falha na validação**, a resposta deverá possuir ***status code*** apropriado, e em seu corpo (body) deverá possuir um objeto com uma propriedade **mensagem** que deverá possuir como valor um texto explicando o motivo da falha.
 
 #### Exemplo de Requisição
 ```javascript
@@ -289,7 +267,7 @@ Esse endpoint deverá realizar o saque de um valor em uma determinada conta banc
 
 #### `POST` `/transacoes/transferir`
 
-Esse endpoint deverá permitir a transferência de recursos (dinheiro) de uma conta bancária para outra e registrar essa transação.
+Esse endpoint permitir a transferência de recursos (dinheiro) de uma conta bancária para outra e registrar essa transação.
 
 -   **Requisição** - O corpo (body) deverá possuir um objeto com as seguintes propriedades (respeitando estes nomes):
 
@@ -297,11 +275,6 @@ Esse endpoint deverá permitir a transferência de recursos (dinheiro) de uma co
     -   numero_conta_destino
     -   valor
     -   senha
-
--   **Resposta**
-
-    Em caso de **sucesso**, não deveremos enviar conteúdo no corpo (body) da resposta.  
-    Em caso de **falha na validação**, a resposta deverá possuir ***status code*** apropriado, e em seu corpo (body) deverá possuir um objeto com uma propriedade **mensagem** que deverá possuir como valor um texto explicando o motivo da falha.
 
 #### Exemplo de Requisição
 ```javascript
